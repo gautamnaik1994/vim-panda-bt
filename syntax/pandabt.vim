@@ -6,10 +6,11 @@ syntax keyword pandabtKeyword sequence fallback repeat while
 syntax keyword pandabtKeyword not parallel random mute race
 syntax keyword pandabtFunction tree Wait WaitRandom RealtimeWait Succeed Fail Running
 syntax keyword pandabtFunction DebugLog DebugLogError DebugLogWarning DebugBreak
-syntax region pandabtString start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax region pandabtString start=/\v'/ skip=/\v\\./ end=/\v'/
-syntax match pandabtComment "\v//.*$"
-syntax keyword pandabtTodo contained TODO FIXME XXX NOTE
+syntax region  pandabtString start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax region  pandabtString start=/\v'/ skip=/\v\\./ end=/\v'/
+syntax match   pandabtTodo contained "\<\(TODO\|FIXME\|NOTE\|OPTIMIZE\):"
+syntax match   pandabtComment "\v//.*$" contains=pandabtTodo
+"syntax keyword pandabtTodo contained TODO FIXME XXX NOTE
 
 highlight link pandabtKeyword Keyword
 highlight link pandabtFunction Function
